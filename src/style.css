@@ -225,6 +225,15 @@ button[type="submit"]:hover {
     font-weight: 500;
 }
 
+h1 {
+    font-size: 24px;
+}
+
+h2, a {
+    font-size: 16px;
+    font-weight: 600;
+}
+
 h4 {
     margin: 0;
     color: var(--scondary-color, #D8DB2F);
@@ -328,15 +337,6 @@ hr {
 
     .heading {
         height: 60px;
-        font-weight: 600;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    h2, a {
-        font-size: 16px;
         font-weight: 600;
     }
 }
