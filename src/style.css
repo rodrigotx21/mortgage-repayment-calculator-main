@@ -9,11 +9,14 @@
     --warning: #D7332A;
 }
 
-/* Remove padding from width*/
+/* Remove padding from width and prevent highlighting*/
 * { 
     -moz-box-sizing: border-box; 
     -webkit-box-sizing: border-box; 
     box-sizing: border-box;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 body {
