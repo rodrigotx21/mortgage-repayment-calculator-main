@@ -12,34 +12,73 @@
 </head>
 <body>
 	<main>
-		<form class="left">
+		<form class="left" onsubmit="calculate(event)"">
 			<div class="heading">
 				<h1>Mortgage Calculator</h1>
-				<a onclick="">Clear All</a>
+				<a>Clear All</a>
 			</div>
 			<section class="input_frame" id="input1">
-				<h2>Mortgage Ammount</h2>
+				<h2>Mortgage Amount</h2>
 				<div class="input">
 					<p class="icon_text">€</p>
-					<input type="text" id="ammount">
+					<input type="text" id="amount" required>
 				</div>
 			</section>
 			<section class="input_frame" id="input2">
 				<h2>Mortgage Term</h2>
 				<div class="input input_right">
 					<p class="icon_text">years</p>
-					<input type="text" id="term">
+					<input type="text" id="term" required>
 				</div>
 			</section>
 			<section class="input_frame" id="input3">
 				<h2>Interest Rate</h2>
 				<div class="input input_right">
 					<p class="icon_text">%</p>
-					<input type="text" id="rate">
+					<input type="text" id="rate" required>
 				</div>
 			</section>
+			<section class="input_frame" id="input4">
+				<h2>Mortgage Type</h2>
+				<div class="input radio_input" onclick="select('repayment')">
+					<input type="radio" name="type" id="repayment" onclick="select('repayment')">
+					<label for="repayment" onclick="select('repayment')">Repayment</label>
+				</div>
+				<div class="input radio_input" onclick="select('interest')">
+					<input type="radio" name="type" id="interest" onclick="select('interest')">
+					<label for="interest" onclick="select('interest')">Interest Only</label>
+				</div>
+			</section>			  
+			<button type="submit">
+				<img src="assets/images/icon-calculator.svg" alt="calculator">
+				Calculate Repayment
+			</button>
 		</form>
-		<section class="right"></section>
+		<section class="right">
+			<section class="initial">
+				<img src="assets/images/illustration-empty.svg" alt="illustration">
+				<h1>Results shown here</h1>
+				<p>Complete the form and click “calculate repayments” to see what 
+					your monthly repayments would be.</p>
+			</section>
+			<section class="results hidden">
+				<div class="heading_right">
+					<h1>Your Results</h1>
+					<p>Your results are shown below based on the information 
+						you provided. To adjust the results, edit the form and 
+						click "calculate repayments" again.</p>
+				</div>
+				<div class="result_frame">
+					<p>Your monthly payments</p>
+					<h4><span id="result"></span>€</h4>
+					<hr>
+					<p>Your monthly payments</p>
+					<p></p>
+					<h5><span id="total"></span>€</h5>
+				</div>
+			</section>
+		</section>
 	</main>
+	<script src="src/script.js"></script>
 </body>
 </html>
